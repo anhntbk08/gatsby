@@ -66,11 +66,7 @@ export default function onNodeCreate(
 
   return loadNodeContent(node)
     .then(content => {
-      const components = parseMetadata(
-        content,
-        node.absolutePath,
-        pluginOptions
-      )
+      const components = parseMetadata(content, node, pluginOptions)
 
       components.forEach(component => {
         const strContent = JSON.stringify(component)
